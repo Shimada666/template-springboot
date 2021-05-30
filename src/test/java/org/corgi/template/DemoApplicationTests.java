@@ -1,10 +1,10 @@
-package org.corgi.scaffold;
+package org.corgi.template;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ScaffoldApplicationTests {
+class DemoApplicationTests {
 
     @Test
     void contextLoads() {
