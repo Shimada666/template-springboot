@@ -5,12 +5,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
  * <p>
- *  服务类
+ * test_table 服务类
  * </p>
  *
  * @author 
- * @since 2021-05-30
+ * @since 2022-01-16
  */
 public interface TestTableBusiness extends IService<TestTableDO> {
-
+    TestTableDO getAndCheckById(Long id);
 }

@@ -54,7 +54,7 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.4.0</version>
+            <version>3.4.3</version>
         </dependency>
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -93,9 +93,19 @@
             <version>1.4.2.Final</version>
         </dependency>
         <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+            <version>1.4.2.Final</version>
+        </dependency>
+        <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>1.9.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.packagedrone</groupId>
+            <artifactId>org.eclipse.packagedrone.utils.rpm</artifactId>
+            <version>0.14.6</version>
         </dependency>
     </dependencies>
 

@@ -2,6 +2,7 @@ package org.corgi.template.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.corgi.template.dal.entity.TestTableDO;
+import org.corgi.template.dal.service.TestTableBusiness;
 import org.corgi.template.service.TestService;
 import org.corgi.template.util.response.WebResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +17,13 @@ public class DemoController {
     @Autowired
     private TestService testService;
 
+    @Autowired
+    private TestTableBusiness testTableBusiness;
+
     @GetMapping("/")
-    public String demo() {
-        return "hello world";
+    public Page<TestTableDO> demo() {
+        Page<TestTableDO> page = testTableBusiness.page(new Page<>(1, 10));
+        return page;
     }
 
     @GetMapping("/api/v1/test/list")

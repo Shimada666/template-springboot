@@ -2,7 +2,6 @@ package org.corgi.template.util.jackson;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 
 public class ObjectMapperFactory {
     private static ObjectMapper INSTANCE;

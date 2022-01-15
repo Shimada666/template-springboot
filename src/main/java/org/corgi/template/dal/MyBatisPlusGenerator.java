@@ -54,10 +54,10 @@ public class MyBatisPlusGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://47.100.88.215:3306/testdb?useUnicode=true&useSSL=false&characterEncoding=utf8");
+        dsc.setUrl("jdbc:mysql://tech.corgi.plus:10003/blog?useUnicode=true&useSSL=false&characterEncoding=utf8");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("123456");
+        dsc.setPassword(System.getProperty("TEST_PASS"));
         mpg.setDataSource(dsc);
 
         // 包配置
@@ -108,9 +108,9 @@ public class MyBatisPlusGenerator {
 
         // 配置自定义输出模板
         //指定自定义模板路径，注意不要带上.ftl/.vm, 会根据使用的模板引擎自动识别
-        // templateConfig.setEntity("templates/entity2.java");
-        // templateConfig.setService();
-        // templateConfig.setController();
+        templateConfig.setEntity("templates/mpg/entity.java");
+        templateConfig.setService("templates/mpg/service.java");
+        templateConfig.setServiceImpl("templates/mpg/serviceImpl.java");
 
         templateConfig.setXml(null);
         templateConfig.setController(null);
@@ -127,6 +127,7 @@ public class MyBatisPlusGenerator {
         // strategy.setSuperControllerClass("你自己的父类控制器,没有就不用设置!");
         // 写于父类中的公共字段
         // strategy.setSuperEntityColumns("id");
+        strategy.setLogicDeleteFieldName("delete_time");
         strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix(pc.getModuleName() + "_");

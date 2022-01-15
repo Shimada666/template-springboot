@@ -5,11 +5,11 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
  * <p>
- *  Mapper 接口
+ * test_table Mapper 接口
  * </p>
  *
  * @author 
- * @since 2021-05-30
+ * @since 2022-01-16
  */
 public interface TestTableDOMapper extends BaseMapper<TestTableDO> {
 
