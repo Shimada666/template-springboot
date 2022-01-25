@@ -12,15 +12,15 @@ import java.util.List;
 @Service
 public class {{ name }}Service {
     @Autowired
-    private {{ name }}Business {{ name | lower_first }}Service;
+    private {{ name }}Business {{ name | lower_first }}Business;
 
     public List<{{ name }}DTO> list{{ name }}() {
-        List<{{ name }}DO> list = {{ name | lower_first }}Service.list();
+        List<{{ name }}DO> list = {{ name | lower_first }}Business.list();
         return {{ name }}Transformer.INSTANCE.dosToDtos(list);
     }
 
     public {{ name }}DTO get{{ name }}(Long id) {
-        {{ name }}DO rule = {{ name | lower_first }}Service.getById(id);
+        {{ name }}DO rule = {{ name | lower_first }}Business.getById(id);
         return {{ name }}Transformer.INSTANCE.doToDto(rule);
     }
 
@@ -29,7 +29,7 @@ public class {{ name }}Service {
 
         // do
         {{ name }}DO rule = {{ name }}Transformer.INSTANCE.dtoToDo(request);
-        return {{ name | lower_first }}Service.save(rule);
+        return {{ name | lower_first }}Business.save(rule);
     }
 
     public boolean update{{ name }}(Long id, {{ name }}DTO request) {
@@ -37,13 +37,13 @@ public class {{ name }}Service {
 
         // do
         {{ name }}DO rule = {{ name }}Transformer.INSTANCE.dtoToDo(request);
-        return {{ name | lower_first }}Service.updateById(rule);
+        return {{ name | lower_first }}Business.updateById(rule);
     }
 
     public boolean delete{{ name }}(Long id) {
         // validate
 
         // do
-        return {{ name | lower_first }}Service.removeById(id);
+        return {{ name | lower_first }}Business.removeById(id);
     }
 }
